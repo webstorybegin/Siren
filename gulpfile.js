@@ -7,7 +7,7 @@ let gulp = require('gulp'),
 
 
 gulp.task('clean', async function(){
-  del.sync('dist')
+  del.sync('app/css')
 })
 
 gulp.task('scss', function(){
@@ -44,5 +44,7 @@ gulp.task('watch', function(){
   gulp.watch('app/*.html', gulp.parallel('html'))
   gulp.watch('src/scss/*.scss', gulp.parallel('scss'))
 });
+
+gulp.task('build', gulp.series('clean'))
 
 gulp.task('default', gulp.parallel('scss', 'browser-sync', 'watch'));

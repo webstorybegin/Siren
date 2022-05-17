@@ -120,7 +120,7 @@ main {
   font-weight: 600;
   line-height: 60px;
   text-shadow: 0px 4px 4px $text-shadow;
-  margin-bottom: 50px;
+  margin: 50px 0;
   span {
     color: $green;
   }
@@ -134,6 +134,7 @@ main {
 .main__sections_items {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 30px 18px;
   background-color: $green-light;
@@ -154,11 +155,21 @@ main {
   &:before {
     content: '';
     position: absolute;
-    background: url('app/img/lifetime.svg') 0 0 no-repeat;
     width: 70px;
-    height: 60px;
+    height: 70px;
     top: 30;
-    border: 1px solid red;
+  }
+  &:first-child:before {
+    background: url('/img/gutters.svg') 0 0 no-repeat;
+  }
+  &:nth-child(2):before {
+    background: url('/img/home.svg') 0 0 no-repeat;
+  }
+  &:nth-child(3):before {
+    background: url('/img/gutters.svg') 0 0 no-repeat;
+  }
+  &:last-child:before {
+    background: url('/img/rating.svg') 0 0 no-repeat;
   }
 }
 
@@ -170,18 +181,23 @@ footer {
 .footer__wrapper,
 .footer__links {
   display: flex;
+  justify-content: center;
   align-items: center;
-
+  color: $white;
   a {
     color: $white;
     text-decoration: underline;
     margin-right: 30px;
+    &:first-child {
+      margin-left: 107px;
+    }
     &:nth-child(4) {
       margin-right: 107px;
     }
   }
   p {
-    color: $white;
+    font-size: 12px;
+    line-height: 18px;
   }
 }
 
