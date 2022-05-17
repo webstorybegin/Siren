@@ -115,23 +115,28 @@ main {
   flex: 1 1 auto;
 }
 
-.main__title {
+.info {
+  padding: 50px 0 60px 0;
+}
+
+.info__title {
   font-size: 45px;
   font-weight: 600;
   line-height: 60px;
   text-shadow: 0px 4px 4px $text-shadow;
-  margin: 50px 0;
+  margin-bottom: 50px;
+
   span {
     color: $green;
   }
 }
 
-.main__sections {
+.info__sections {
   display: flex;
   text-align: center;
 }
 
-.main__sections_items {
+.info__sections_items {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -142,8 +147,8 @@ main {
   font-weight: 500;
   font-size: 21px;
   line-height: 27px;
-  width: 262px;
-  height: 227px;
+  min-width: 262px;
+  min-height: 227px;
   margin-right: 20px;
   
   &:last-child {
@@ -160,17 +165,22 @@ main {
     top: 30;
   }
   &:first-child:before {
-    background: url('/img/gutters.svg') 0 0 no-repeat;
+    background: url('../img/gutters.svg') 0 0 no-repeat;
   }
   &:nth-child(2):before {
-    background: url('/img/home.svg') 0 0 no-repeat;
+    background: url('../img/home.svg') 0 0 no-repeat;
   }
   &:nth-child(3):before {
-    background: url('/img/gutters.svg') 0 0 no-repeat;
+    background: url('../img/gutters.svg') 0 0 no-repeat;
   }
   &:last-child:before {
-    background: url('/img/rating.svg') 0 0 no-repeat;
+    background: url('../img/rating.svg') 0 0 no-repeat;
   }
+}
+
+.description {
+  padding: 60px 0;
+  background-color: $green-light;
 }
 
 footer {
