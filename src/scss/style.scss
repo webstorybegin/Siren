@@ -78,13 +78,6 @@ li {
 img {
   vertical-align: top;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-}
 
 .wrapper {
   font-family: Montserrat;
@@ -92,19 +85,27 @@ h6 {
 
 .content {
   max-width: 1110px;
+
+  @media (max-width: 1110px) {
+    padding: 0 15px;
+  }
 }
 
-header {
+.header {
   border-bottom: 1px solid $grey;
 }
 
-main {
+.main {
   flex: 1 1 auto;
 }
 
 .info {
   padding-top: 50px;
   padding-bottom: 60px;
+
+  @media (max-width: 1110px) {
+    padding-bottom: 35px;
+  }
 }
 
 .info__title {
@@ -113,6 +114,11 @@ main {
   h1 {
     font-size: 45px;
     line-height: 60px;
+
+    @media (max-width: 550px) {
+      font-size: 22px;
+      line-height: 26px;
+    }
   }
   span {
     color: $green;
@@ -120,7 +126,16 @@ main {
 }
 
 .info__sections {
+  display: grid;
+  text-align: center;
   gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: 1110px) {
+    grid-template-columns: repeat(2, 0fr);
+    justify-content: center;
+    gap: 8px;
+  }
 }
 
 .info__sections_items {
@@ -129,7 +144,8 @@ main {
   color: $black;
   font-size: 21px;
   line-height: 27px;
-  width: 262px;
+  width: 100%;
+  height: 100%;
 
   &:last-child {
     margin-right: 0;
@@ -156,16 +172,53 @@ main {
   &:last-child:before {
     background: url("../img/rating.svg") 0 0 no-repeat;
   }
+
+  @media (max-width: 1110px) {
+    padding: 20px 15px;
+    border-radius: 8px;
+    width: 262px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  @media (max-width: 550px) {
+    width: 167px;
+
+    &:nth-child(2) {
+      order: 1;
+    }
+    &:nth-child(4) {
+      order: 1;
+    }
+  }
+
+  @media (max-width: 360px) {
+    width: 150px;
+  }
 }
 
 .description {
   padding: 60px 0;
   margin-bottom: 60px;
   background-color: $green-light;
+
+  @media (max-width: 1110px) {
+    margin-bottom: 0;
+  }
 }
 
-.description__items:last-child {
-  margin-bottom: 0 !important;
+.description__items {
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  @media (max-width: 1110px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .description__items_text {
@@ -175,31 +228,57 @@ main {
     font-size: 27px;
     line-height: 36px;
     margin-bottom: 15px;
+
+    @media (max-width: 1110px) {
+      font-size: 20px;
+      line-height: 26px;
+    }
   }
   p {
     font-size: 18px;
     line-height: 26px;
     font-weight: 500;
+
+    @media (max-width: 1110px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  @media (max-width: 1110px) {
+    margin: 0 !important;
   }
 }
 
 .custom:before {
   content: "";
   position: absolute;
-  right: -20px;
+  right: -15px;
   top: -22px;
   background: url("../img/printed.png") 0 0 no-repeat;
+  background-size: contain;
   width: 240px;
   height: 87px;
+
+  @media (max-width: 1110px) {
+    right: 4px;
+    top: 4px;
+    width: 200px;
+    height: 70px;
+  }
 }
 
-.prices__text {
+.prices {
   h2 {
     font-size: 27px;
   }
   p {
     font-size: 18px;
     line-height: 26px;
+  }
+
+  @media (max-width: 1110px) {
+    display: none;
   }
 }
 
@@ -219,10 +298,26 @@ main {
 .lifetime {
   background: $light-grey;
   margin-bottom: 60px;
+
+  @media (max-width: 1110px) {
+    margin-bottom: 35px;
+  }
+}
+
+.lifetime__wrapper {
+  @media (max-width: 1110px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .lifetime__image {
   margin-right: 30px;
+
+  @media (max-width: 1110px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
 
 .lifetime__text {
@@ -236,15 +331,34 @@ main {
     font-size: 18px;
     line-height: 26px;
   }
+
+  @media (max-width: 1110px) {
+    text-align: center;
+
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
 }
 
 .install {
   font-size: 18px;
   line-height: 26px;
   margin-bottom: 60px;
+  text-align: center;
+
+  @media (max-width: 1110px) {
+    font-size: 16px;
+    text-align: start;
+    margin-bottom: 35px;
+  }
 }
 
-footer {
+.footer {
   background-color: $green;
   padding: 25px 0;
 }
@@ -253,7 +367,7 @@ footer {
 .footer__links {
   color: $white;
   gap: 30px;
-  
+
   li {
     text-decoration: underline;
     a {
@@ -269,5 +383,26 @@ footer {
   p {
     font-size: 12px;
     line-height: 18px;
+  }
+
+  @media (max-width: 1160px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+
+    li {
+      &:first-child {
+        margin-left: 0;
+      }
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+    }
+
+    br {
+      display: none;
+    }
   }
 }
