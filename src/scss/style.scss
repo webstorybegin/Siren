@@ -84,30 +84,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: inherit;
-  font-weight: inherit;
 }
 
 .wrapper {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
   font-family: Montserrat;
-}
-
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 .content {
   max-width: 1110px;
-  margin: 0 auto;
 }
 
 header {
-  text-align: center;
-  padding: 20px 0;
   border-bottom: 1px solid $grey;
 }
 
@@ -116,40 +103,33 @@ main {
 }
 
 .info {
-  padding: 50px 0 60px 0;
+  padding-top: 50px;
+  padding-bottom: 60px;
 }
 
 .info__title {
-  font-size: 45px;
-  font-weight: 600;
-  line-height: 60px;
   text-shadow: 0px 4px 4px $text-shadow;
-  margin-bottom: 50px;
 
+  h1 {
+    font-size: 45px;
+    line-height: 60px;
+  }
   span {
     color: $green;
   }
 }
 
 .info__sections {
-  display: flex;
-  text-align: center;
+  gap: 20px;
 }
 
 .info__sections_items {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   padding: 30px 18px;
   background-color: $green-light;
   color: $black;
-  font-weight: 500;
   font-size: 21px;
   line-height: 27px;
-  min-width: 262px;
-  min-height: 227px;
-  margin-right: 20px;
+  width: 262px;
 
   &:last-child {
     margin-right: 0;
@@ -165,7 +145,7 @@ main {
     top: 30;
   }
   &:first-child:before {
-    background: url("../img/gutters.svg") 0 0 no-repeat;
+    background: url("../img/lifetime.svg") 0 0 no-repeat;
   }
   &:nth-child(2):before {
     background: url("../img/home.svg") 0 0 no-repeat;
@@ -184,17 +164,8 @@ main {
   background-color: $green-light;
 }
 
-.description__items {
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
- 
-  &:nth-child(2) {
-    flex-direction: row-reverse;
-  }
-  &:last-child {
-    margin-bottom: 0;
-  }
+.description__items:last-child {
+  margin-bottom: 0 !important;
 }
 
 .description__items_text {
@@ -203,7 +174,6 @@ main {
   h2 {
     font-size: 27px;
     line-height: 36px;
-    font-weight: 700;
     margin-bottom: 15px;
   }
   p {
@@ -213,42 +183,24 @@ main {
   }
 }
 
-.custom {
-  position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    right: -20px;
-    top: -22px;
-    background: url('../img/printed.png') 0 0 no-repeat;
-    width: 240px;
-    height: 87px;
-  }
-}
-
-.prices {
-  margin-bottom: 48px;
-  text-align: center;
+.custom:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: -22px;
+  background: url("../img/printed.png") 0 0 no-repeat;
+  width: 240px;
+  height: 87px;
 }
 
 .prices__text {
-  margin-bottom: 25px;
   h2 {
-    font-weight: 700;
     font-size: 27px;
-    margin-bottom: 15px;
   }
   p {
-    font-weight: 500;
     font-size: 18px;
     line-height: 26px;
   }
-}
-
-.prices__card_wrapper {
-  display: flex;
-  justify-content: space-between;
 }
 
 .prices__card {
@@ -258,21 +210,15 @@ main {
   max-width: 255px;
 
   p {
-    padding: 15px 0;
-    font-weight: 500;
     font-size: 21px;
     line-height: 27px;
+    margin-bottom: 0;
   }
 }
 
 .lifetime {
   background: $light-grey;
   margin-bottom: 60px;
-}
-
-.lifetime__wrapper {
-  display: flex;
-  align-items: center;
 }
 
 .lifetime__image {
@@ -282,23 +228,17 @@ main {
 .lifetime__text {
   h2 {
     font-size: 27px;
-    font-weight: 700;
-    margin-bottom: 15px;
-
-    span {
-      color: $green;
-    }
+  }
+  span {
+    color: $green;
   }
   p {
-    font-size: 18px;
-    font-weight: 500;
     font-size: 18px;
     line-height: 26px;
   }
 }
 
 .install {
-  text-align: center;
   font-size: 18px;
   line-height: 26px;
   margin-bottom: 60px;
@@ -311,14 +251,11 @@ footer {
 
 .footer__wrapper,
 .footer__links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: $white;
-
+  gap: 30px;
+  
   li {
     text-decoration: underline;
-    margin-right: 30px;
     a {
       color: $white;
     }
